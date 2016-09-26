@@ -30,12 +30,6 @@ namespace TerrariaUSaveEditor
             this.NumItemId.Maximum = Convert.ToDecimal(Items.MaxID());
             this.NumItemAmount.Minimum = 0;
             this.NumItemAmount.Maximum = ushort.MaxValue;
-
-            // DEBUG
-            this.saveHandler.LoadSave(@"C:\Users\wbatt\Desktop\saves\PLAYER5.PLR");
-
-            this.GetSaveDataToControls();
-            this.ControlsEnabled(true);
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
