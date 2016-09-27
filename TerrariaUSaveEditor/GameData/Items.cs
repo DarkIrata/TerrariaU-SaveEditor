@@ -18,11 +18,6 @@ namespace TerrariaUSaveEditor.GameData
             return ItemList[id];
         }
 
-        public static int MaxID()
-        {
-            return ItemList[ItemList.Count - 1].Id;
-        }
-
         private static Dictionary<int, ItemData> ItemList = new Dictionary<int, ItemData>()
         {
             {-1, new ItemData(-1, "UNKOWN ITEM")},

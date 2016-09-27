@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameData\Prefixes.cs" />
     <Compile Include="Helper\ArrayHelper.cs" />
     <Compile Include="Helper\ItemHelper.cs" />
     <Compile Include="InventoryData.cs" />
@@ -61,8 +62,14 @@
     <Compile Include="ItemBoxGrid.Designer.cs">
       <DependentUpon>ItemBoxGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemData.cs" />
-    <Compile Include="Items.cs" />
+    <Compile Include="GameData\ItemData.cs" />
+    <Compile Include="ItemEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemEditor.Designer.cs">
+      <DependentUpon>ItemEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameData\Items.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +83,9 @@
     <Compile Include="Helper\ValidationHelper.cs" />
     <EmbeddedResource Include="ItemBox.resx">
       <DependentUpon>ItemBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemEditor.resx">
+      <DependentUpon>ItemEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
