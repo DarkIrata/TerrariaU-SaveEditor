@@ -98,6 +98,7 @@ namespace TerrariaUSaveEditor
             }
 
             var invData = (InventoryData)e.Node.Tag;
+            this.Editor.LoadInventoryItem(invData);
         }
 
         private void GetSaveDataToControls()
@@ -199,7 +200,7 @@ namespace TerrariaUSaveEditor
             var nodes = this.InventoryTree.Nodes[nodeName].Nodes;
             foreach (var invData in data)
             {
-                nodes[nodeName + invData.Slot].Text = invData.Item.Name;
+                nodes[nodeName + invData.Slot].Text = $"[{Prefixes.GetPrefixNameById(invData.Prefix)}] {invData.Item.Name}";
                 nodes[nodeName + invData.Slot].Tag = invData;
             }
         }
