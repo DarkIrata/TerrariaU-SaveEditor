@@ -62,8 +62,8 @@
             this.PanelColorHair = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.InvTab = new System.Windows.Forms.TabPage();
-            this.Editor = new TerrariaUSaveEditor.ItemEditor();
             this.InventoryTree = new System.Windows.Forms.TreeView();
+            this.Editor = new TerrariaUSaveEditor.ItemEditor();
             this.TopMenu.SuspendLayout();
             this.TabControl.SuspendLayout();
             this.CharTab.SuspendLayout();
@@ -379,18 +379,10 @@
             this.InvTab.Text = "Inventory";
             this.InvTab.UseVisualStyleBackColor = true;
             // 
-            // Editor
-            // 
-            this.Editor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Editor.Location = new System.Drawing.Point(253, 6);
-            this.Editor.Name = "Editor";
-            this.Editor.Size = new System.Drawing.Size(285, 136);
-            this.Editor.TabIndex = 1;
-            // 
             // InventoryTree
             // 
             this.InventoryTree.Dock = System.Windows.Forms.DockStyle.Left;
+            this.InventoryTree.FullRowSelect = true;
             this.InventoryTree.Location = new System.Drawing.Point(3, 3);
             this.InventoryTree.Name = "InventoryTree";
             treeNode1.Name = "Bar";
@@ -410,10 +402,20 @@
             this.InventoryTree.TabIndex = 0;
             this.InventoryTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.InventoryTree_NodeMouseDoubleClick);
             // 
+            // Editor
+            // 
+            this.Editor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Editor.Location = new System.Drawing.Point(253, 6);
+            this.Editor.Name = "Editor";
+            this.Editor.Size = new System.Drawing.Size(285, 136);
+            this.Editor.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(554, 366);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.TopMenu);

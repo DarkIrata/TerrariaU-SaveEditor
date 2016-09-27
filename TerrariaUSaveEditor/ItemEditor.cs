@@ -14,8 +14,9 @@ namespace TerrariaUSaveEditor
 {
     public partial class ItemEditor : UserControl
     {
-        private string Node { get; set; }
         private InventoryData invData { get; set; }
+
+        public event EventHandler<ItemEditorSavedEventArgs> ChangesSavedEvent;
 
         public ItemEditor()
         {
@@ -43,6 +44,10 @@ namespace TerrariaUSaveEditor
             this.invData.Prefix = prefixID;
             this.invData.Item.Id = ushort.Parse(this.NudItemId.Value.ToString());
             this.invData.Item.Name = this.TxtItemName.Text;
+
+            var itemEditorSavedEventArgs = new ItemEditorSavedEventArgs();
+            itemEditorSavedEventArgs.InventoryData = this.invData;
+            ChangesSavedEvent?.Invoke(this, itemEditorSavedEventArgs);
         }
 
         private void NudItemId_ValueChanged(object sender, EventArgs e)
@@ -65,8 +70,7 @@ namespace TerrariaUSaveEditor
             this.NudAmount.Value = data.Amount;
             this.TxtItemName.Text = data.Item.Name;
             this.CbPrefix.SelectedIndex = data.Prefix;
-
-            this.Node = data.SlotType.ToString() + data.Slot;
+            
             this.SwitchControlStatus(true);
         }
                 
@@ -97,4 +101,15 @@ namespace TerrariaUSaveEditor
             }
         }
     }
+
+    public class ItemEditorSavedEventArgs : EventArgs
+    {
+        public InventoryData InventoryData { get; internal set; }
+
+        public ItemEditorSavedEventArgs()
+        {
+            this.InventoryData = new InventoryData();
+        }
+    }
+
 }

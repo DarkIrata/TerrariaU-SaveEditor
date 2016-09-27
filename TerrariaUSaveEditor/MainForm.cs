@@ -19,6 +19,7 @@ namespace TerrariaUSaveEditor
         {
             this.InitializeComponent();
             this.InitializeInventoryTab();
+            this.Editor.ChangesSavedEvent += Editor_ChangesSavedEvent;
 
             this.ControlsEnabled(false);
             foreach (var item in Enum.GetValues(typeof(Difficutly)))
@@ -26,6 +27,13 @@ namespace TerrariaUSaveEditor
                 this.CBoxDifficulty.Items.Add(item);
             }
             
+        }
+
+        private void Editor_ChangesSavedEvent(object sender, ItemEditorSavedEventArgs e)
+        {
+            var node = this.InventoryTree.Nodes[e.InventoryData.SlotType.ToString()].Nodes[e.InventoryData.SlotType.ToString() + e.InventoryData.Slot];
+            node.Text = $"[{Prefixes.GetPrefixNameById(e.InventoryData.Prefix)}] {e.InventoryData.Item.Name}";
+            node.Tag = e.InventoryData;
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
