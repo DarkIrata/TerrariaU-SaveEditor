@@ -16,25 +16,18 @@ namespace TerrariaUSaveEditor.Helper
 
             for (int i = 0; i < data.Length; i+=5)
             {
-                var idArray = new byte[2];
-                Array.Copy(data, i, idArray, 0, 2);
-
-                if (IsEmptySlot(idArray))
+                byte[] itemData = new byte[5];
+                bool isEmptySlot = false;
+                Array.Copy(data, i, itemData, 0, 5);
+                
+                if (IsEmptySlot(itemData))
                 {
                     i -= 3;
+                    isEmptySlot = true;
                 }
 
-                int id = GetIDFromBytes(idArray);
-
-                items.Add(new InventoryData()
-                {
-                    Slot = slot,
-                    Item = Items.GetItembyId(id),
-                    SlotType = slotType,
-                    Prefix = (ushort)data[i + 4],
-                    Amount = (ushort)data[i + 3]
-                });
-                
+                var invData = GetItem(itemData, slot, slotType, isEmptySlot);
+                items.Add(invData);
                 slot++;
 
                 if (GotAllSlots(slotType, slot))
@@ -44,6 +37,67 @@ namespace TerrariaUSaveEditor.Helper
             }
 
             return items;
+        }
+
+        public static byte[] GetItemBytes(List<InventoryData> itemDatas)
+        {
+            List<byte> data = new List<byte>();
+
+            foreach (var itemData in itemDatas)
+            {
+                if (itemData.Item.Id == 0)
+                {
+                    data.Add(0);
+                    data.Add(0);
+                    continue;
+                }
+
+                data.AddRange(ConvertItemToByteData(itemData));
+            }
+
+            return data.ToArray();
+        }
+
+        private static InventoryData GetItem(byte[] itemData, ushort slot, SlotType slotType, bool isEmptySlot)
+        {
+            if (isEmptySlot)
+            {
+                return new InventoryData()
+                {
+                    Slot = slot,
+                    Item = Items.GetItembyId(0),
+                    SlotType = slotType,
+                    Prefix = 0,
+                    Amount = 0
+                };
+            }
+
+            var idArray = new byte[2];
+            Array.Copy(itemData, 0, idArray, 0, 2);
+            int id = GetIDFromBytes(idArray);
+
+            return new InventoryData()
+            {
+                Slot = slot,
+                Item = Items.GetItembyId(id),
+                SlotType = slotType,
+                Prefix = (ushort)itemData[4],
+                Amount = (ushort)itemData[3]
+            };
+        }
+
+        private static byte[] ConvertItemToByteData(InventoryData invData)
+        {
+            byte[] itemData = new byte[5];
+
+            Array.Copy(GetBytesFromId(Convert.ToInt16(invData.Item.Id)), itemData, 2);
+            // Currently unkown Byte
+            itemData[2] = 00;
+            // 
+            itemData[3] = (byte)invData.Amount;
+            itemData[4] = (byte)invData.Prefix;
+
+            return itemData;
         }
 
         private static bool GotAllSlots(SlotType slotType, int currentSlot)
@@ -83,6 +137,18 @@ namespace TerrariaUSaveEditor.Helper
 
             Array.Reverse(idData);
             return BitConverter.ToInt16(idData, 0);
+        }
+
+        private static byte[] GetBytesFromId(short idData)
+        {
+            if (idData > 255)
+            {
+                return BitConverter.GetBytes(idData);
+            }
+
+            var data = BitConverter.GetBytes(idData);
+            Array.Reverse(data);
+            return data;
         }
     }
 }

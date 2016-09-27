@@ -158,6 +158,20 @@ namespace TerrariaUSaveEditor
             this.saveHandler.SetColors(charColors);
 
             // Inv
+            Dictionary<SlotType, List<InventoryData>> inventory = new Dictionary<SlotType, List<InventoryData>>();
+            foreach (TreeNode mainNode in this.InventoryTree.Nodes)
+            {
+                List<InventoryData> invDataList = new List<InventoryData>();
+                foreach (TreeNode itemNode in mainNode.Nodes)
+                {
+                    if (itemNode.Tag is InventoryData)
+                    {
+                        invDataList.Add((InventoryData)itemNode.Tag);
+                    }
+                }
+                inventory.Add((SlotType)Enum.Parse(typeof(SlotType), mainNode.Name), invDataList);
+            }
+            this.saveHandler.SetInventory(inventory);
         }
 
         private void ControlsEnabled(bool enabled)

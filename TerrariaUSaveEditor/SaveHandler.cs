@@ -125,6 +125,23 @@ namespace TerrariaUSaveEditor
             this.RawSave = ArrayHelper.AddRangeAtIndex(this.RawSave, buffer, OffsetHelper.HairColor);
         }
 
+        internal void SetInventory(Dictionary<SlotType, List<InventoryData>> inventory)
+        {
+            var barData = (ItemHelper.GetItemBytes(inventory[SlotType.Bar]));
+            var invData = (ItemHelper.GetItemBytes(inventory[SlotType.Inv]));
+            var moneyData = (ItemHelper.GetItemBytes(inventory[SlotType.Money]));
+            var ammoData = (ItemHelper.GetItemBytes(inventory[SlotType.Ammo]));
+
+            byte[] buffer = new byte[barData.Length + invData.Length + moneyData.Length + ammoData.Length];
+            Array.Copy(barData, 0, buffer, 0, barData.Length);
+            Array.Copy(invData, 0, buffer, barData.Length, invData.Length);
+            Array.Copy(moneyData, 0, buffer, barData.Length + invData.Length, moneyData.Length);
+            Array.Copy(ammoData, 0, buffer, barData.Length + invData.Length + moneyData.Length, ammoData.Length);
+            this.RawSave = ArrayHelper.RemoveRange(this.RawSave, OffsetHelper.Inventory, OffsetHelper.InventoryLength);
+            this.RawSave = ArrayHelper.AddRangeAtIndex(this.RawSave, buffer, OffsetHelper.Inventory);
+            OffsetHelper.InventoryLength = buffer.Length;
+        }
+
         internal Dictionary<SlotType, List<InventoryData>> GetInventory()
         {
             Dictionary<SlotType, List<InventoryData>> inventory = new Dictionary<SlotType, List<InventoryData>>();
