@@ -42,8 +42,7 @@ namespace TerrariaUSaveEditor
 
             this.invData.Amount = ushort.Parse(this.NudAmount.Value.ToString());
             this.invData.Prefix = prefixID;
-            this.invData.Item.Id = ushort.Parse(this.NudItemId.Value.ToString());
-            this.invData.Item.Name = this.TxtItemName.Text;
+            this.invData.Item = new ItemData(ushort.Parse(this.NudItemId.Value.ToString()), this.TxtItemName.Text);
 
             var itemEditorSavedEventArgs = new ItemEditorSavedEventArgs();
             itemEditorSavedEventArgs.InventoryData = this.invData;
