@@ -24,7 +24,7 @@ namespace TerrariaUSaveEditor
             this.SwitchControlStatus(false);
 
             var itemNameAutoCompleteList = new AutoCompleteStringCollection();
-            itemNameAutoCompleteList.AddRange(Items.ItemList.Values.Select(x => x.Name).ToArray());
+            itemNameAutoCompleteList.AddRange(Items.GetItemNameArray());
             this.TxtItemName.AutoCompleteCustomSource = itemNameAutoCompleteList;
 
             foreach (var prefix in Prefixes.PrefixList)
@@ -57,7 +57,7 @@ namespace TerrariaUSaveEditor
             this.TxtItemName.Text = item.Name;
             this.CbPrefix.SelectedIndex = 0;
             this.NudAmount.Value = 0;
-            if (item.Id > -1)
+            if (item.Id > 0)
             {
                 this.NudAmount.Value = 1;
             }

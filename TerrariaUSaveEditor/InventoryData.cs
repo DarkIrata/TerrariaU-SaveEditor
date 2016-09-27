@@ -29,15 +29,16 @@ namespace TerrariaUSaveEditor
 
         public InventoryData()
         {
-        }
-
-        public InventoryData(ushort slot, SlotType slotType)
-        {
-            this.Slot = slot;
-            this.SlotType = slotType;
             this.Item = Items.GetItembyId(0);
             this.Prefix = 0;
             this.Amount = 0;
+        }
+
+        public InventoryData(ushort slot, SlotType slotType)
+            : this()
+        {
+            this.Slot = slot;
+            this.SlotType = slotType;
         }
     }
 }

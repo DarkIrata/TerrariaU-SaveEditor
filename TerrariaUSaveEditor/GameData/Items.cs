@@ -34,10 +34,15 @@ namespace TerrariaUSaveEditor.GameData
             return item;
         }
 
-        public static Dictionary<int, ItemData> ItemList = new Dictionary<int, ItemData>()
+        public static string[] GetItemNameArray()
+        {
+            return Items.ItemList.Values.Select(x => x.Name).ToArray();
+        }
+
+        private static readonly Dictionary<int, ItemData> ItemList = new Dictionary<int, ItemData>()
         {
             {-1, new ItemData(-1, "UNKOWN ITEM")},
-            {0, new ItemData()},
+            {0, new ItemData(0, "Empty")},
             {1, new ItemData(1, "Iron Pickaxe")},
             {2, new ItemData(2, "Dirt Block")},
             {3, new ItemData(3, "Stone Block")},
