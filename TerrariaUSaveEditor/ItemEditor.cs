@@ -15,14 +15,14 @@ namespace TerrariaUSaveEditor
         public ItemEditor()
         {
             this.InitializeComponent();
-
         }
 
         public void LoadInventoryItem(InventoryData data)
         {
             this.NudItemId.Value = data.Item.Id;
             this.NudAmount.Value = data.Amount;
-
+            this.TxtItemName.Text = data.Item.Name;
+            this.CbPrefix.SelectedIndex = data.Prefix;
         }
     }
 }
