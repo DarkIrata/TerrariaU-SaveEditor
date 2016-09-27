@@ -25,12 +25,7 @@ namespace TerrariaUSaveEditor
             {
                 this.CBoxDifficulty.Items.Add(item);
             }
-
-
-            this.NumItemId.Minimum = -1;
-            this.NumItemId.Maximum = ushort.MaxValue;
-            this.NumItemAmount.Minimum = 0;
-            this.NumItemAmount.Maximum = ushort.MaxValue;
+            
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,11 +98,6 @@ namespace TerrariaUSaveEditor
             }
 
             var invData = (InventoryData)e.Node.Tag;
-
-            this.TxtItemName.Text = invData.Item.Name;
-            this.NumItemId.Value = invData.Item.Id;
-            this.NumItemAmount.Value = invData.Amount;
-            this.NumItemPrefix.Value = invData.Prefix;
         }
 
         private void GetSaveDataToControls()

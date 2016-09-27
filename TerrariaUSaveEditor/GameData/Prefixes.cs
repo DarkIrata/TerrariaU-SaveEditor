@@ -28,7 +28,7 @@ namespace TerrariaUSaveEditor.GameData
             return PrefixList.Where(x => x.Value == name).FirstOrDefault().Key;
         }
 
-        private static Dictionary<int, string> PrefixList = new Dictionary<int, string>()
+        public static Dictionary<int, string> PrefixList = new Dictionary<int, string>()
         {
             {0, "No Prefix"},
             {1, "Large"},

@@ -39,6 +39,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.CharTab = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CBoxDifficulty = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.BtnFemale = new System.Windows.Forms.Button();
+            this.lblNameError = new System.Windows.Forms.Label();
+            this.BtnMale = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PanelColorShoes = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,32 +61,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.PanelColorHair = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.BtnFemale = new System.Windows.Forms.Button();
-            this.BtnMale = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblNameError = new System.Windows.Forms.Label();
             this.InvTab = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.CBoxDifficulty = new System.Windows.Forms.ComboBox();
             this.InventoryTree = new System.Windows.Forms.TreeView();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.NumItemAmount = new System.Windows.Forms.NumericUpDown();
-            this.NumItemId = new System.Windows.Forms.NumericUpDown();
-            this.TxtItemName = new System.Windows.Forms.TextBox();
-            this.NumItemPrefix = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
             this.TopMenu.SuspendLayout();
             this.TabControl.SuspendLayout();
             this.CharTab.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.InvTab.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumItemAmount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumItemId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumItemPrefix)).BeginInit();
             this.SuspendLayout();
             // 
             // TopMenu
@@ -147,8 +136,89 @@
             this.CharTab.Text = "Character";
             this.CharTab.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.CBoxDifficulty);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.TxtName);
+            this.groupBox2.Controls.Add(this.BtnFemale);
+            this.groupBox2.Controls.Add(this.lblNameError);
+            this.groupBox2.Controls.Add(this.BtnMale);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(351, 120);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Main";
+            // 
+            // CBoxDifficulty
+            // 
+            this.CBoxDifficulty.FormattingEnabled = true;
+            this.CBoxDifficulty.Location = new System.Drawing.Point(50, 50);
+            this.CBoxDifficulty.Name = "CBoxDifficulty";
+            this.CBoxDifficulty.Size = new System.Drawing.Size(136, 21);
+            this.CBoxDifficulty.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(-2, 53);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Difficulty:";
+            // 
+            // BtnFemale
+            // 
+            this.BtnFemale.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
+            this.BtnFemale.ForeColor = System.Drawing.Color.Magenta;
+            this.BtnFemale.Location = new System.Drawing.Point(84, 74);
+            this.BtnFemale.Name = "BtnFemale";
+            this.BtnFemale.Size = new System.Drawing.Size(28, 28);
+            this.BtnFemale.TabIndex = 5;
+            this.BtnFemale.Text = "♀";
+            this.BtnFemale.UseVisualStyleBackColor = true;
+            this.BtnFemale.Click += new System.EventHandler(this.BtnSetGender_Click);
+            // 
+            // lblNameError
+            // 
+            this.lblNameError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNameError.Location = new System.Drawing.Point(188, 16);
+            this.lblNameError.Name = "lblNameError";
+            this.lblNameError.Size = new System.Drawing.Size(157, 36);
+            this.lblNameError.TabIndex = 2;
+            this.lblNameError.Text = "..";
+            this.lblNameError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // BtnMale
+            // 
+            this.BtnMale.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
+            this.BtnMale.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.BtnMale.Location = new System.Drawing.Point(50, 74);
+            this.BtnMale.Name = "BtnMale";
+            this.BtnMale.Size = new System.Drawing.Size(28, 28);
+            this.BtnMale.TabIndex = 4;
+            this.BtnMale.Text = "♂";
+            this.BtnMale.UseVisualStyleBackColor = true;
+            this.BtnMale.Click += new System.EventHandler(this.BtnSetGender_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Gender:";
+            // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.PanelColorShoes);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.PanelColorPants);
@@ -296,58 +366,8 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Hair:";
             // 
-            // BtnFemale
-            // 
-            this.BtnFemale.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
-            this.BtnFemale.ForeColor = System.Drawing.Color.Magenta;
-            this.BtnFemale.Location = new System.Drawing.Point(84, 74);
-            this.BtnFemale.Name = "BtnFemale";
-            this.BtnFemale.Size = new System.Drawing.Size(28, 28);
-            this.BtnFemale.TabIndex = 5;
-            this.BtnFemale.Text = "♀";
-            this.BtnFemale.UseVisualStyleBackColor = true;
-            this.BtnFemale.Click += new System.EventHandler(this.BtnSetGender_Click);
-            // 
-            // BtnMale
-            // 
-            this.BtnMale.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
-            this.BtnMale.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.BtnMale.Location = new System.Drawing.Point(50, 74);
-            this.BtnMale.Name = "BtnMale";
-            this.BtnMale.Size = new System.Drawing.Size(28, 28);
-            this.BtnMale.TabIndex = 4;
-            this.BtnMale.Text = "♂";
-            this.BtnMale.UseVisualStyleBackColor = true;
-            this.BtnMale.Click += new System.EventHandler(this.BtnSetGender_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Gender:";
-            // 
-            // lblNameError
-            // 
-            this.lblNameError.Location = new System.Drawing.Point(188, 16);
-            this.lblNameError.Name = "lblNameError";
-            this.lblNameError.Size = new System.Drawing.Size(157, 36);
-            this.lblNameError.TabIndex = 2;
-            this.lblNameError.Text = "..";
-            this.lblNameError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // InvTab
             // 
-            this.InvTab.Controls.Add(this.NumItemPrefix);
-            this.InvTab.Controls.Add(this.label14);
-            this.InvTab.Controls.Add(this.TxtItemName);
-            this.InvTab.Controls.Add(this.NumItemId);
-            this.InvTab.Controls.Add(this.NumItemAmount);
-            this.InvTab.Controls.Add(this.label13);
-            this.InvTab.Controls.Add(this.label12);
-            this.InvTab.Controls.Add(this.label11);
             this.InvTab.Controls.Add(this.InventoryTree);
             this.InvTab.Location = new System.Drawing.Point(4, 22);
             this.InvTab.Name = "InvTab";
@@ -356,40 +376,6 @@
             this.InvTab.TabIndex = 1;
             this.InvTab.Text = "Inventory";
             this.InvTab.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.CBoxDifficulty);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.TxtName);
-            this.groupBox2.Controls.Add(this.BtnFemale);
-            this.groupBox2.Controls.Add(this.lblNameError);
-            this.groupBox2.Controls.Add(this.BtnMale);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(6, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(351, 120);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Main";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(-2, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 13);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Difficulty:";
-            // 
-            // CBoxDifficulty
-            // 
-            this.CBoxDifficulty.FormattingEnabled = true;
-            this.CBoxDifficulty.Location = new System.Drawing.Point(50, 50);
-            this.CBoxDifficulty.Name = "CBoxDifficulty";
-            this.CBoxDifficulty.Size = new System.Drawing.Size(136, 21);
-            this.CBoxDifficulty.TabIndex = 7;
             // 
             // InventoryTree
             // 
@@ -413,70 +399,6 @@
             this.InventoryTree.TabIndex = 0;
             this.InventoryTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.InventoryTree_NodeMouseDoubleClick);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(361, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Item ID:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(367, 35);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 13);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Name:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(359, 87);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 13);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Amount:";
-            // 
-            // NumItemAmount
-            // 
-            this.NumItemAmount.Location = new System.Drawing.Point(407, 84);
-            this.NumItemAmount.Name = "NumItemAmount";
-            this.NumItemAmount.Size = new System.Drawing.Size(131, 20);
-            this.NumItemAmount.TabIndex = 4;
-            // 
-            // NumItemId
-            // 
-            this.NumItemId.Location = new System.Drawing.Point(407, 6);
-            this.NumItemId.Name = "NumItemId";
-            this.NumItemId.Size = new System.Drawing.Size(131, 20);
-            this.NumItemId.TabIndex = 5;
-            // 
-            // TxtItemName
-            // 
-            this.TxtItemName.Location = new System.Drawing.Point(407, 32);
-            this.TxtItemName.Name = "TxtItemName";
-            this.TxtItemName.Size = new System.Drawing.Size(131, 20);
-            this.TxtItemName.TabIndex = 6;
-            // 
-            // NumItemPrefix
-            // 
-            this.NumItemPrefix.Location = new System.Drawing.Point(407, 58);
-            this.NumItemPrefix.Name = "NumItemPrefix";
-            this.NumItemPrefix.Size = new System.Drawing.Size(131, 20);
-            this.NumItemPrefix.TabIndex = 8;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(369, 61);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(36, 13);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Prefix:";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,15 +414,11 @@
             this.TopMenu.PerformLayout();
             this.TabControl.ResumeLayout(false);
             this.CharTab.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.InvTab.ResumeLayout(false);
-            this.InvTab.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumItemAmount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumItemId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumItemPrefix)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,14 +457,6 @@
         private System.Windows.Forms.ComboBox CBoxDifficulty;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TreeView InventoryTree;
-        private System.Windows.Forms.TextBox TxtItemName;
-        private System.Windows.Forms.NumericUpDown NumItemId;
-        private System.Windows.Forms.NumericUpDown NumItemAmount;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown NumItemPrefix;
-        private System.Windows.Forms.Label label14;
     }
 }
 

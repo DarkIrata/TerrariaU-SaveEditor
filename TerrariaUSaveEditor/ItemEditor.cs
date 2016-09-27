@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TerrariaUSaveEditor.GameData;
 
 namespace TerrariaUSaveEditor
 {
@@ -15,6 +16,10 @@ namespace TerrariaUSaveEditor
         public ItemEditor()
         {
             this.InitializeComponent();
+            foreach (var prefix in Prefixes.PrefixList)
+            {
+                this.CbPrefix.Items.Add(prefix);
+            }
         }
 
         public void LoadInventoryItem(InventoryData data)
