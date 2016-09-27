@@ -42,6 +42,8 @@
             // 
             // NudItemId
             // 
+            this.NudItemId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NudItemId.Location = new System.Drawing.Point(86, 3);
             this.NudItemId.Maximum = new decimal(new int[] {
             65535,
@@ -61,6 +63,8 @@
             // 
             // NudAmount
             // 
+            this.NudAmount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NudAmount.Location = new System.Drawing.Point(86, 82);
             this.NudAmount.Maximum = new decimal(new int[] {
             65535,
@@ -76,6 +80,8 @@
             // 
             // TxtItemName
             // 
+            this.TxtItemName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtItemName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.TxtItemName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TxtItemName.Location = new System.Drawing.Point(86, 29);
@@ -85,6 +91,8 @@
             // 
             // CbPrefix
             // 
+            this.CbPrefix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CbPrefix.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.CbPrefix.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.CbPrefix.FormattingEnabled = true;
