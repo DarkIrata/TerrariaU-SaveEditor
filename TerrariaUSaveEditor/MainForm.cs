@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TerrariaUSaveEditor.GameData;
 
 namespace TerrariaUSaveEditor
 {
@@ -27,7 +28,7 @@ namespace TerrariaUSaveEditor
 
 
             this.NumItemId.Minimum = -1;
-            this.NumItemId.Maximum = Convert.ToDecimal(Items.MaxID());
+            this.NumItemId.Maximum = ushort.MaxValue;
             this.NumItemAmount.Minimum = 0;
             this.NumItemAmount.Maximum = ushort.MaxValue;
         }
