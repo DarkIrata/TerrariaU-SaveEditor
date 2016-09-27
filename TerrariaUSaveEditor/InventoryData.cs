@@ -35,7 +35,7 @@ namespace TerrariaUSaveEditor
         {
             this.Slot = slot;
             this.SlotType = slotType;
-            this.Item = Items.GetItem(0);
+            this.Item = Items.GetItembyId(0);
             this.Prefix = 0;
             this.Amount = 0;
         }

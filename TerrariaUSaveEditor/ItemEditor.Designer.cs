@@ -36,6 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.BtnSave = new System.Windows.Forms.Button();
+            this.UrlLblItems = new System.Windows.Forms.LinkLabel();
+            this.UrlLblPrefixes = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.NudItemId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudAmount)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +63,7 @@
             this.NudItemId.TabIndex = 0;
             this.NudItemId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.NudItemId.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.NudItemId.ValueChanged += new System.EventHandler(this.NudItemId_ValueChanged);
             // 
             // NudAmount
             // 
@@ -73,7 +77,7 @@
             0});
             this.NudAmount.Name = "NudAmount";
             this.NudAmount.Size = new System.Drawing.Size(142, 20);
-            this.NudAmount.TabIndex = 1;
+            this.NudAmount.TabIndex = 3;
             this.NudAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.NudAmount.ThousandsSeparator = true;
             this.NudAmount.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
@@ -87,19 +91,20 @@
             this.TxtItemName.Location = new System.Drawing.Point(86, 29);
             this.TxtItemName.Name = "TxtItemName";
             this.TxtItemName.Size = new System.Drawing.Size(142, 20);
-            this.TxtItemName.TabIndex = 2;
+            this.TxtItemName.TabIndex = 1;
+            this.TxtItemName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtItemName_KeyDown);
             // 
             // CbPrefix
             // 
             this.CbPrefix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CbPrefix.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.CbPrefix.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.CbPrefix.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CbPrefix.FormattingEnabled = true;
             this.CbPrefix.Location = new System.Drawing.Point(86, 55);
             this.CbPrefix.Name = "CbPrefix";
             this.CbPrefix.Size = new System.Drawing.Size(142, 21);
-            this.CbPrefix.TabIndex = 3;
+            this.CbPrefix.TabIndex = 2;
             // 
             // label1
             // 
@@ -137,10 +142,46 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Amount:";
             // 
+            // BtnSave
+            // 
+            this.BtnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSave.Location = new System.Drawing.Point(154, 108);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(74, 23);
+            this.BtnSave.TabIndex = 4;
+            this.BtnSave.Text = "Save";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // UrlLblItems
+            // 
+            this.UrlLblItems.AutoSize = true;
+            this.UrlLblItems.Location = new System.Drawing.Point(5, 118);
+            this.UrlLblItems.Name = "UrlLblItems";
+            this.UrlLblItems.Size = new System.Drawing.Size(32, 13);
+            this.UrlLblItems.TabIndex = 8;
+            this.UrlLblItems.TabStop = true;
+            this.UrlLblItems.Text = "Items";
+            this.UrlLblItems.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UrlLblItems_LinkClicked);
+            // 
+            // UrlLblPrefixes
+            // 
+            this.UrlLblPrefixes.AutoSize = true;
+            this.UrlLblPrefixes.Location = new System.Drawing.Point(43, 118);
+            this.UrlLblPrefixes.Name = "UrlLblPrefixes";
+            this.UrlLblPrefixes.Size = new System.Drawing.Size(44, 13);
+            this.UrlLblPrefixes.TabIndex = 9;
+            this.UrlLblPrefixes.TabStop = true;
+            this.UrlLblPrefixes.Text = "Prefixes";
+            this.UrlLblPrefixes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UrlLblPrefixes_LinkClicked);
+            // 
             // ItemEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.UrlLblPrefixes);
+            this.Controls.Add(this.UrlLblItems);
+            this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -150,7 +191,7 @@
             this.Controls.Add(this.NudAmount);
             this.Controls.Add(this.NudItemId);
             this.Name = "ItemEditor";
-            this.Size = new System.Drawing.Size(231, 107);
+            this.Size = new System.Drawing.Size(231, 141);
             ((System.ComponentModel.ISupportInitialize)(this.NudItemId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudAmount)).EndInit();
             this.ResumeLayout(false);
@@ -168,5 +209,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BtnSave;
+        private System.Windows.Forms.LinkLabel UrlLblItems;
+        private System.Windows.Forms.LinkLabel UrlLblPrefixes;
     }
 }

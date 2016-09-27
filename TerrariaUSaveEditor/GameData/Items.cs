@@ -8,7 +8,7 @@ namespace TerrariaUSaveEditor.GameData
 {
     public static class Items
     {
-        public static ItemData GetItem(int id)
+        public static ItemData GetItembyId(int id)
         {
             if (!ItemList.ContainsKey(id))
             {
@@ -18,7 +18,23 @@ namespace TerrariaUSaveEditor.GameData
             return ItemList[id];
         }
 
-        private static Dictionary<int, ItemData> ItemList = new Dictionary<int, ItemData>()
+        public static ItemData GetItemByName(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                return ItemList[-1];
+            }
+
+            var item = ItemList.Values.Where(x => x.Name == name).FirstOrDefault();
+            if (item == null)
+            {
+                return ItemList[-1];
+            }
+
+            return item;
+        }
+
+        public static Dictionary<int, ItemData> ItemList = new Dictionary<int, ItemData>()
         {
             {-1, new ItemData(-1, "UNKOWN ITEM")},
             {0, new ItemData()},

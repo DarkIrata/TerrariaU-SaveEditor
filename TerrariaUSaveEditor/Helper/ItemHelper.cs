@@ -29,7 +29,7 @@ namespace TerrariaUSaveEditor.Helper
                 items.Add(new InventoryData()
                 {
                     Slot = slot,
-                    Item = Items.GetItem(id),
+                    Item = Items.GetItembyId(id),
                     SlotType = slotType,
                     Prefix = (ushort)data[i + 4],
                     Amount = (ushort)data[i + 3]

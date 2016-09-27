@@ -30,7 +30,7 @@ namespace TerrariaUSaveEditor.GameData
 
         public static Dictionary<int, string> PrefixList = new Dictionary<int, string>()
         {
-            {0, "No Prefix"},
+            {0, "None"},
             {1, "Large"},
             {2, "Massive"},
             {3, "Dangerous"},
