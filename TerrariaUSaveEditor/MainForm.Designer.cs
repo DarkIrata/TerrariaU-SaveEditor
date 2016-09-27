@@ -63,6 +63,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.InvTab = new System.Windows.Forms.TabPage();
             this.InventoryTree = new System.Windows.Forms.TreeView();
+            this.Editor = new TerrariaUSaveEditor.ItemEditor();
             this.TopMenu.SuspendLayout();
             this.TabControl.SuspendLayout();
             this.CharTab.SuspendLayout();
@@ -121,7 +122,7 @@
             this.TabControl.Location = new System.Drawing.Point(0, 24);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(554, 329);
+            this.TabControl.Size = new System.Drawing.Size(554, 342);
             this.TabControl.TabIndex = 2;
             // 
             // CharTab
@@ -131,7 +132,7 @@
             this.CharTab.Location = new System.Drawing.Point(4, 22);
             this.CharTab.Name = "CharTab";
             this.CharTab.Padding = new System.Windows.Forms.Padding(3);
-            this.CharTab.Size = new System.Drawing.Size(546, 303);
+            this.CharTab.Size = new System.Drawing.Size(546, 316);
             this.CharTab.TabIndex = 0;
             this.CharTab.Text = "Character";
             this.CharTab.UseVisualStyleBackColor = true;
@@ -368,11 +369,12 @@
             // 
             // InvTab
             // 
+            this.InvTab.Controls.Add(this.Editor);
             this.InvTab.Controls.Add(this.InventoryTree);
             this.InvTab.Location = new System.Drawing.Point(4, 22);
             this.InvTab.Name = "InvTab";
             this.InvTab.Padding = new System.Windows.Forms.Padding(3);
-            this.InvTab.Size = new System.Drawing.Size(546, 303);
+            this.InvTab.Size = new System.Drawing.Size(546, 316);
             this.InvTab.TabIndex = 1;
             this.InvTab.Text = "Inventory";
             this.InvTab.UseVisualStyleBackColor = true;
@@ -395,19 +397,26 @@
             treeNode2,
             treeNode3,
             treeNode4});
-            this.InventoryTree.Size = new System.Drawing.Size(206, 297);
+            this.InventoryTree.Size = new System.Drawing.Size(244, 310);
             this.InventoryTree.TabIndex = 0;
             this.InventoryTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.InventoryTree_NodeMouseDoubleClick);
+            // 
+            // Editor
+            // 
+            this.Editor.Location = new System.Drawing.Point(307, 6);
+            this.Editor.Name = "Editor";
+            this.Editor.Size = new System.Drawing.Size(231, 106);
+            this.Editor.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 353);
+            this.ClientSize = new System.Drawing.Size(554, 366);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.TopMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.TopMenu;
+            this.MinimumSize = new System.Drawing.Size(570, 317);
             this.Name = "MainForm";
             this.Text = "TerrariaU Save Editor";
             this.TopMenu.ResumeLayout(false);
@@ -457,6 +466,7 @@
         private System.Windows.Forms.ComboBox CBoxDifficulty;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TreeView InventoryTree;
+        private ItemEditor Editor;
     }
 }
 
