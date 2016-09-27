@@ -176,7 +176,8 @@ namespace TerrariaUSaveEditor
 
         private void ControlsEnabled(bool enabled)
         {
-            this.CharTab.Enabled = enabled;
+            this.groupBox1.Enabled = enabled;
+            this.groupBox2.Enabled = enabled;
             this.InvTab.Enabled = enabled;
             this.saveToolStripMenuItem.Enabled = enabled;
         }
