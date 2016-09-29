@@ -37,11 +37,8 @@ namespace TerrariaUSaveEditor
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            int prefixID = 0;
-            int.TryParse(this.CbPrefix.SelectedText, out prefixID);
-
             this.invData.Amount = ushort.Parse(this.NudAmount.Value.ToString());
-            this.invData.Prefix = prefixID;
+            this.invData.Prefix = this.CbPrefix.SelectedIndex;
             this.invData.Item = new ItemData(ushort.Parse(this.NudItemId.Value.ToString()), this.TxtItemName.Text);
 
             var itemEditorSavedEventArgs = new ItemEditorSavedEventArgs();

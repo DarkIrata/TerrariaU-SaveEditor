@@ -105,13 +105,13 @@ namespace TerrariaUSaveEditor.Helper
             switch (slotType)
             {
                 case SlotType.Bar:
-                    return currentSlot == 10 ? true : false;
+                    return currentSlot == 10;
                 case SlotType.Inv:
-                    return currentSlot == 30 ? true : false;
+                    return currentSlot == 30;
                 case SlotType.Ammo:
-                    return currentSlot == 4 ? true : false;
+                    return currentSlot == 4;
                 case SlotType.Money:
-                    return currentSlot == 4 ? true : false;
+                    return currentSlot == 4;
                 default:
                     throw new ArgumentException("Invalid SlotType");
             }
@@ -119,13 +119,7 @@ namespace TerrariaUSaveEditor.Helper
 
         private static bool IsEmptySlot(byte[] idData)
         {
-            if (idData[0] == 0 &&
-                idData[1] == 0)
-            {
-                return true;
-            }
-
-            return false;
+            return idData[0] == 0 && idData[1] == 0;
         }
 
         private static int GetIDFromBytes(byte[] idData)
