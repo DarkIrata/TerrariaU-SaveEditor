@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Quick Bar");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Inventory");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Ammunition");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Money");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Quick Bar");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Inventory");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Ammunition");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Money");
             this.TopMenu = new System.Windows.Forms.MenuStrip();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,22 +148,22 @@
             // lblAbout
             // 
             this.lblAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblAbout.Location = new System.Drawing.Point(112, 254);
+            this.lblAbout.AutoSize = true;
+            this.lblAbout.Location = new System.Drawing.Point(62, 284);
             this.lblAbout.Name = "lblAbout";
-            this.lblAbout.Size = new System.Drawing.Size(428, 56);
+            this.lblAbout.Size = new System.Drawing.Size(288, 26);
             this.lblAbout.TabIndex = 11;
-            this.lblAbout.Text = "Developed by: DarkIrata\r\nHompeage: http://ipmix.de/\r\nSource: https://github.com/D" +
-    "arkIrata/TerrariaU-SaveEditor\r\nThis tool is free to use! Feel free to modify it." +
-    "";
+            this.lblAbout.Text = "TerrariaU Save Editor by DarkIrata - https://ipmix.de/\r\nSource: https://github.co" +
+    "m/DarkIrata/TerrariaU-SaveEditor";
             this.lblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 210);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 260);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -175,8 +175,8 @@
             this.lblCaution.Name = "lblCaution";
             this.lblCaution.Size = new System.Drawing.Size(351, 33);
             this.lblCaution.TabIndex = 9;
-            this.lblCaution.Text = "CAUTION: This tool can destroy your save! On each save a .BAK file is generated f" +
-    "rom the last point.";
+            this.lblCaution.Text = "CAUTION: By using this tool you can corrupt your save. It\'s alway good to have a " +
+    "backup file.";
             // 
             // groupBox2
             // 
@@ -435,19 +435,19 @@
             this.InventoryTree.FullRowSelect = true;
             this.InventoryTree.Location = new System.Drawing.Point(3, 3);
             this.InventoryTree.Name = "InventoryTree";
-            treeNode1.Name = "Bar";
-            treeNode1.Text = "Quick Bar";
-            treeNode2.Name = "Inv";
-            treeNode2.Text = "Inventory";
-            treeNode3.Name = "Ammo";
-            treeNode3.Text = "Ammunition";
-            treeNode4.Name = "Money";
-            treeNode4.Text = "Money";
+            treeNode9.Name = "Bar";
+            treeNode9.Text = "Quick Bar";
+            treeNode10.Name = "Inv";
+            treeNode10.Text = "Inventory";
+            treeNode11.Name = "Ammo";
+            treeNode11.Text = "Ammunition";
+            treeNode12.Name = "Money";
+            treeNode12.Text = "Money";
             this.InventoryTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4});
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12});
             this.InventoryTree.Size = new System.Drawing.Size(244, 310);
             this.InventoryTree.TabIndex = 0;
             this.InventoryTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.InventoryTree_NodeMouseDoubleClick);
@@ -460,14 +460,16 @@
             this.ClientSize = new System.Drawing.Size(554, 366);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.TopMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.TopMenu;
             this.MinimumSize = new System.Drawing.Size(570, 317);
             this.Name = "MainForm";
-            this.Text = "TerrariaU Save Editor v0.6";
+            this.Text = "TerrariaU Save Editor v0.6.1";
             this.TopMenu.ResumeLayout(false);
             this.TopMenu.PerformLayout();
             this.TabControl.ResumeLayout(false);
             this.CharTab.ResumeLayout(false);
+            this.CharTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
