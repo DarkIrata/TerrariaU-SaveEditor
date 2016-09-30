@@ -45,7 +45,7 @@ namespace TerrariaUSaveEditor.Helper
                 hex.AppendFormat("{0:x2} ", b);
             }
 
-            return hex.ToString().Trim();
+            return hex.ToString().Trim().ToUpper();
         }
     }
 }
