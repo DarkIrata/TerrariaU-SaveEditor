@@ -139,11 +139,6 @@ namespace TerrariaUSaveEditor.Helper
 
         private static byte[] GetBytesFromId(short idData)
         {
-            if (idData > 255)
-            {
-                return BitConverter.GetBytes(idData);
-            }
-
             var data = BitConverter.GetBytes(idData);
             Array.Reverse(data);
             return data;
