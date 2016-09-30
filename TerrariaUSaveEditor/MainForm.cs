@@ -56,6 +56,7 @@ namespace TerrariaUSaveEditor
         {
             this.GetControlsDataToSave();
             this.saveHandler.SaveSave();
+            MessageBox.Show("Saved successfully!");
         }
 
         private void TxtName_TextChanged(object sender, EventArgs e)
