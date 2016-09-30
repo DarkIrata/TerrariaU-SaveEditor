@@ -8,7 +8,9 @@ namespace TerrariaUSaveEditor.Helper
         // Name length change all offsets.
         public static int NameLength { get; set; }
 
-        // Empty slots get written as "00 00". Used slots uses 5 bytes. "ID ID ?? AMOUNT PREFIX"
+        // Empty slots get written as "00 00". Used slots uses 5 bytes. "ID ID AMOUNT AMOUNT PREFIX"
+        // Accessories (used) takes 3 Bytes. "ID ID PREFIX" currently unsure about space in inventory.
+
         public static int InventoryLength { get; set; }
 
         private static int OffsetDiff => Name + NameLength;
