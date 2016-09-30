@@ -465,7 +465,7 @@
             this.MainMenuStrip = this.TopMenu;
             this.MinimumSize = new System.Drawing.Size(570, 317);
             this.Name = "MainForm";
-            this.Text = "TerrariaU Save Editor v0.6.1";
+            this.Text = "TerrariaU Save Editor v0.6.2";
             this.TopMenu.ResumeLayout(false);
             this.TopMenu.PerformLayout();
             this.TabControl.ResumeLayout(false);
