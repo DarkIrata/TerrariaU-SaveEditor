@@ -25,7 +25,7 @@ namespace TerrariaUSaveEditor
     public class SaveHandler
     {
         public byte[] RawSave { get; set; }
-        private string SavePath { get; set; }
+        public string SavePath { get; set; }
         
 
         internal void LoadSave(string path)

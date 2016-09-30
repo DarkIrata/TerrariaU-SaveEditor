@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Quick Bar");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Inventory");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Ammunition");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Money");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Quick Bar");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Inventory");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Ammunition");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Money");
             this.TopMenu = new System.Windows.Forms.MenuStrip();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +66,8 @@
             this.PanelColorHair = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.InvTab = new System.Windows.Forms.TabPage();
-            this.Editor = new TerrariaUSaveEditor.ItemEditor();
             this.InventoryTree = new System.Windows.Forms.TreeView();
+            this.Editor = new TerrariaUSaveEditor.ItemEditor();
             this.TopMenu.SuspendLayout();
             this.TabControl.SuspendLayout();
             this.CharTab.SuspendLayout();
@@ -420,6 +420,30 @@
             this.InvTab.Text = "Inventory";
             this.InvTab.UseVisualStyleBackColor = true;
             // 
+            // InventoryTree
+            // 
+            this.InventoryTree.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.InventoryTree.Dock = System.Windows.Forms.DockStyle.Left;
+            this.InventoryTree.FullRowSelect = true;
+            this.InventoryTree.Location = new System.Drawing.Point(3, 3);
+            this.InventoryTree.Name = "InventoryTree";
+            treeNode1.Name = "Bar";
+            treeNode1.Text = "Quick Bar";
+            treeNode2.Name = "Inv";
+            treeNode2.Text = "Inventory";
+            treeNode3.Name = "Ammo";
+            treeNode3.Text = "Ammunition";
+            treeNode4.Name = "Money";
+            treeNode4.Text = "Money";
+            this.InventoryTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
+            this.InventoryTree.Size = new System.Drawing.Size(244, 310);
+            this.InventoryTree.TabIndex = 0;
+            this.InventoryTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.InventoryTree_NodeMouseDoubleClick);
+            // 
             // Editor
             // 
             this.Editor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -428,29 +452,6 @@
             this.Editor.Name = "Editor";
             this.Editor.Size = new System.Drawing.Size(285, 152);
             this.Editor.TabIndex = 1;
-            // 
-            // InventoryTree
-            // 
-            this.InventoryTree.Dock = System.Windows.Forms.DockStyle.Left;
-            this.InventoryTree.FullRowSelect = true;
-            this.InventoryTree.Location = new System.Drawing.Point(3, 3);
-            this.InventoryTree.Name = "InventoryTree";
-            treeNode9.Name = "Bar";
-            treeNode9.Text = "Quick Bar";
-            treeNode10.Name = "Inv";
-            treeNode10.Text = "Inventory";
-            treeNode11.Name = "Ammo";
-            treeNode11.Text = "Ammunition";
-            treeNode12.Name = "Money";
-            treeNode12.Text = "Money";
-            this.InventoryTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12});
-            this.InventoryTree.Size = new System.Drawing.Size(244, 310);
-            this.InventoryTree.TabIndex = 0;
-            this.InventoryTree.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.InventoryTree_NodeMouseDoubleClick);
             // 
             // MainForm
             // 

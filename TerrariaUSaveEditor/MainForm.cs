@@ -15,6 +15,8 @@ namespace TerrariaUSaveEditor
     {
         private SaveHandler saveHandler = new SaveHandler();
 
+        private TreeNode selectedTreeNode = null;
+
         public MainForm()
         {
             this.InitializeComponent();
@@ -57,6 +59,13 @@ namespace TerrariaUSaveEditor
             this.GetControlsDataToSave();
             this.saveHandler.SaveSave();
             MessageBox.Show("Saved successfully!");
+
+            this.saveHandler.LoadSave(this.saveHandler.SavePath);
+            this.GetSaveDataToControls();
+            if (this.selectedTreeNode != null)
+            {
+                this.Editor.LoadInventoryItem((InventoryData)this.selectedTreeNode.Tag);
+            }
         }
 
         private void TxtName_TextChanged(object sender, EventArgs e)
@@ -105,6 +114,15 @@ namespace TerrariaUSaveEditor
             {
                 return;
             }
+
+            if (this.selectedTreeNode == null)
+            {
+                this.selectedTreeNode = e.Node;
+            }
+
+            this.selectedTreeNode.BackColor = e.Node.BackColor;
+            this.selectedTreeNode = e.Node;
+            this.selectedTreeNode.BackColor = Color.FromArgb(255, 106, 106);
 
             var invData = (InventoryData)e.Node.Tag;
             this.Editor.LoadInventoryItem(invData);
