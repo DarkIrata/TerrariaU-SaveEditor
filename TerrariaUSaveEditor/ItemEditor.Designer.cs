@@ -39,6 +39,7 @@
             this.BtnSave = new System.Windows.Forms.Button();
             this.UrlLblItems = new System.Windows.Forms.LinkLabel();
             this.UrlLblPrefixes = new System.Windows.Forms.LinkLabel();
+            this.LblRaw = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NudItemId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudAmount)).BeginInit();
             this.SuspendLayout();
@@ -156,7 +157,7 @@
             // UrlLblItems
             // 
             this.UrlLblItems.AutoSize = true;
-            this.UrlLblItems.Location = new System.Drawing.Point(5, 118);
+            this.UrlLblItems.Location = new System.Drawing.Point(3, 113);
             this.UrlLblItems.Name = "UrlLblItems";
             this.UrlLblItems.Size = new System.Drawing.Size(32, 13);
             this.UrlLblItems.TabIndex = 8;
@@ -167,7 +168,7 @@
             // UrlLblPrefixes
             // 
             this.UrlLblPrefixes.AutoSize = true;
-            this.UrlLblPrefixes.Location = new System.Drawing.Point(43, 118);
+            this.UrlLblPrefixes.Location = new System.Drawing.Point(43, 113);
             this.UrlLblPrefixes.Name = "UrlLblPrefixes";
             this.UrlLblPrefixes.Size = new System.Drawing.Size(44, 13);
             this.UrlLblPrefixes.TabIndex = 9;
@@ -175,10 +176,20 @@
             this.UrlLblPrefixes.Text = "Prefixes";
             this.UrlLblPrefixes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UrlLblPrefixes_LinkClicked);
             // 
+            // LblRaw
+            // 
+            this.LblRaw.AutoSize = true;
+            this.LblRaw.Location = new System.Drawing.Point(3, 134);
+            this.LblRaw.Name = "LblRaw";
+            this.LblRaw.Size = new System.Drawing.Size(99, 13);
+            this.LblRaw.TabIndex = 10;
+            this.LblRaw.Text = "Current Raw: 00 00";
+            // 
             // ItemEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LblRaw);
             this.Controls.Add(this.UrlLblPrefixes);
             this.Controls.Add(this.UrlLblItems);
             this.Controls.Add(this.BtnSave);
@@ -191,7 +202,7 @@
             this.Controls.Add(this.NudAmount);
             this.Controls.Add(this.NudItemId);
             this.Name = "ItemEditor";
-            this.Size = new System.Drawing.Size(231, 141);
+            this.Size = new System.Drawing.Size(231, 151);
             ((System.ComponentModel.ISupportInitialize)(this.NudItemId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudAmount)).EndInit();
             this.ResumeLayout(false);
@@ -212,5 +223,6 @@
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.LinkLabel UrlLblItems;
         private System.Windows.Forms.LinkLabel UrlLblPrefixes;
+        private System.Windows.Forms.Label LblRaw;
     }
 }

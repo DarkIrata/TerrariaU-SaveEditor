@@ -35,5 +35,17 @@ namespace TerrariaUSaveEditor.Helper
 
             return colorArray;
         }
+
+
+        public static string ToHex(this byte[] raw)
+        {
+            StringBuilder hex = new StringBuilder(raw.Length * 2);
+            foreach (byte b in raw)
+            {
+                hex.AppendFormat("{0:x2} ", b);
+            }
+
+            return hex.ToString().Trim();
+        }
     }
 }

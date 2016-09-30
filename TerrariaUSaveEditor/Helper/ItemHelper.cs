@@ -52,6 +52,12 @@ namespace TerrariaUSaveEditor.Helper
                     continue;
                 }
 
+                if (itemData.Item.Id == -1)
+                {
+                    data.AddRange(itemData.RawData);
+                    continue;
+                }
+
                 data.AddRange(ConvertItemToByteData(itemData));
             }
 
@@ -65,10 +71,7 @@ namespace TerrariaUSaveEditor.Helper
                 return new InventoryData()
                 {
                     Slot = slot,
-                    Item = Items.GetItembyId(0),
-                    SlotType = slotType,
-                    Prefix = 0,
-                    Amount = 0
+                    SlotType = slotType
                 };
             }
 
@@ -82,7 +85,8 @@ namespace TerrariaUSaveEditor.Helper
                 Item = Items.GetItembyId(id),
                 SlotType = slotType,
                 Prefix = (ushort)itemData[4],
-                Amount = (ushort)itemData[3]
+                Amount = (ushort)itemData[3],
+                RawData = itemData
             };
         }
 

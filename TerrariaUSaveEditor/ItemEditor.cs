@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TerrariaUSaveEditor.GameData;
 using System.Diagnostics;
+using TerrariaUSaveEditor.Helper;
 
 namespace TerrariaUSaveEditor
 {
@@ -66,8 +67,13 @@ namespace TerrariaUSaveEditor
             this.NudAmount.Value = data.Amount;
             this.TxtItemName.Text = data.Item.Name;
             this.CbPrefix.SelectedIndex = data.Prefix;
-            
-            this.SwitchControlStatus(true);
+            this.LblRaw.Text = $"Current Raw: {data.RawData.ToHex()}";
+
+            this.SwitchControlStatus(false);
+            if (data.Item.Id > -1)
+            {
+                this.SwitchControlStatus(true);
+            }
         }
                 
         private void SwitchControlStatus(bool enabled)

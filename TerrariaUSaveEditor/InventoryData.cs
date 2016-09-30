@@ -27,9 +27,12 @@ namespace TerrariaUSaveEditor
 
         public ushort Amount { get; set; }
 
+        public byte[] RawData { get; set; }
+
         public InventoryData()
         {
             this.Item = Items.GetItembyId(0);
+            this.RawData = new byte[2];
             this.Prefix = 0;
             this.Amount = 0;
         }
