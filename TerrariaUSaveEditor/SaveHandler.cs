@@ -168,7 +168,7 @@ namespace TerrariaUSaveEditor
         private List<InventoryData> GetBarItems()
         {
             var buffer = new byte[50];
-            Buffer.BlockCopy(this.RawSave, OffsetHelper.Inventory, buffer, 0, 0x29);
+            Buffer.BlockCopy(this.RawSave, OffsetHelper.Inventory, buffer, 0, buffer.Length);
 
             return ItemHelper.GetItems(buffer, SlotType.Bar);
         }
@@ -176,7 +176,7 @@ namespace TerrariaUSaveEditor
         private List<InventoryData> GetInvItems(int offsetDiff)
         {
             var buffer = new byte[250];
-            Buffer.BlockCopy(this.RawSave, OffsetHelper.Inventory + offsetDiff, buffer, 0, 0xFA);
+            Buffer.BlockCopy(this.RawSave, OffsetHelper.Inventory + offsetDiff, buffer, 0, buffer.Length);
 
             return ItemHelper.GetItems(buffer, SlotType.Inv);
         }
@@ -184,7 +184,7 @@ namespace TerrariaUSaveEditor
         private List<InventoryData> GetMoneyItems(int offsetDiff)
         {
             var buffer = new byte[20];
-            Buffer.BlockCopy(this.RawSave, OffsetHelper.Inventory + offsetDiff, buffer, 0, 0x14);
+            Buffer.BlockCopy(this.RawSave, OffsetHelper.Inventory + offsetDiff, buffer, 0, buffer.Length);
 
             return ItemHelper.GetItems(buffer, SlotType.Money);
         }
@@ -192,7 +192,7 @@ namespace TerrariaUSaveEditor
         private List<InventoryData> GetAmmoItems(int offsetDiff)
         {
             var buffer = new byte[20];
-            Buffer.BlockCopy(this.RawSave, OffsetHelper.Inventory + offsetDiff, buffer, 0, 0x14);
+            Buffer.BlockCopy(this.RawSave, OffsetHelper.Inventory + offsetDiff, buffer, 0, buffer.Length);
 
             return ItemHelper.GetItems(buffer, SlotType.Ammo);
         }
