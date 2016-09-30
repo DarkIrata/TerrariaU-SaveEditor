@@ -58,7 +58,7 @@ namespace TerrariaUSaveEditor.Helper
                     continue;
                 }
 
-                data.AddRange(ConvertItemToByteData(itemData));
+                data.AddRange(ConvertItemToBytes(itemData));
             }
 
             return data.ToArray();
@@ -76,29 +76,30 @@ namespace TerrariaUSaveEditor.Helper
             }
 
             var idArray = new byte[2];
+            var amountArray = new byte[2];
             Array.Copy(itemData, 0, idArray, 0, 2);
-            int id = GetIDFromBytes(idArray);
+            Array.Copy(itemData, 2, amountArray, 0, 2);
 
             return new InventoryData()
             {
                 Slot = slot,
-                Item = Items.GetItembyId(id),
+                Item = Items.GetItembyId(ConvertBytesToInt(idArray)),
                 SlotType = slotType,
                 Prefix = (ushort)itemData[4],
-                Amount = (ushort)itemData[3],
+                Amount = (ushort)ConvertBytesToInt(amountArray),
                 RawData = itemData
             };
         }
 
-        private static byte[] ConvertItemToByteData(InventoryData invData)
+        private static byte[] ConvertItemToBytes(InventoryData invData)
         {
             byte[] itemData = new byte[5];
 
-            Array.Copy(GetBytesFromId(Convert.ToInt16(invData.Item.Id)), itemData, 2);
-            // Currently unkown Byte
-            itemData[2] = 00;
-            // 
-            itemData[3] = (byte)invData.Amount;
+            // Convert ID
+            Array.Copy(ConvertUShortToBytes(Convert.ToUInt16(invData.Item.Id)), itemData, 2);
+            // Convert Amount
+            Array.Copy(ConvertUShortToBytes(Convert.ToUInt16(invData.Amount)), 0, itemData, 2, 2);
+
             itemData[4] = (byte)invData.Prefix;
 
             return itemData;
@@ -126,7 +127,7 @@ namespace TerrariaUSaveEditor.Helper
             return idData[0] == 0 && idData[1] == 0;
         }
 
-        private static int GetIDFromBytes(byte[] idData)
+        private static int ConvertBytesToInt(byte[] idData)
         {
             if (idData[1] == 0)
             {
@@ -137,7 +138,7 @@ namespace TerrariaUSaveEditor.Helper
             return BitConverter.ToInt16(idData, 0);
         }
 
-        private static byte[] GetBytesFromId(short idData)
+        private static byte[] ConvertUShortToBytes(ushort idData)
         {
             var data = BitConverter.GetBytes(idData);
             Array.Reverse(data);

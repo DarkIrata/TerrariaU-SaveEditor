@@ -25,7 +25,7 @@ namespace TerrariaUSaveEditor
 
         public int Prefix { get; set; }
 
-        public ushort Amount { get; set; }
+        public int Amount { get; set; }
 
         public byte[] RawData { get; set; }
 
