@@ -41,7 +41,7 @@ namespace TerrariaUSaveEditor.GameData
 
         private static readonly Dictionary<int, ItemData> ItemList = new Dictionary<int, ItemData>()
         {
-            {-1, new ItemData(-1, "UNKOWN ITEM")},
+            {-1, new ItemData(-1, "UNKNOWN ITEM")},
             {0, new ItemData(0, "Empty")},
             {1, new ItemData(1, "Iron Pickaxe")},
             {2, new ItemData(2, "Dirt Block")},
