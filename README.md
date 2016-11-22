@@ -27,4 +27,4 @@ Start the .exe and load your save.
 5. Submit a pull request :)
 
 ## Credits
-Currently only me... i'm doing the whole work..
+Lennart1911 @ GBAtemp.net - Testing & Sending his save
