@@ -173,10 +173,11 @@
             this.lblCaution.ForeColor = System.Drawing.Color.DarkRed;
             this.lblCaution.Location = new System.Drawing.Point(6, 129);
             this.lblCaution.Name = "lblCaution";
-            this.lblCaution.Size = new System.Drawing.Size(351, 33);
+            this.lblCaution.Size = new System.Drawing.Size(351, 87);
             this.lblCaution.TabIndex = 9;
             this.lblCaution.Text = "CAUTION: By using this tool you can corrupt your save. It\'s alway good to have a " +
-    "backup file.";
+    "backup file.\r\n\r\nTo work probably, remove any items in your Accessory / Equip slo" +
+    "ts, before you use this tool!";
             // 
             // groupBox2
             // 
@@ -465,7 +466,7 @@
             this.MainMenuStrip = this.TopMenu;
             this.MinimumSize = new System.Drawing.Size(570, 317);
             this.Name = "MainForm";
-            this.Text = "TerrariaU Save Editor v0.6.2";
+            this.Text = "TerrariaU Save Editor";
             this.TopMenu.ResumeLayout(false);
             this.TopMenu.PerformLayout();
             this.TabControl.ResumeLayout(false);

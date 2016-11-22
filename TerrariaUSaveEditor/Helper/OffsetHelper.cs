@@ -19,10 +19,10 @@ namespace TerrariaUSaveEditor.Helper
         public static int NameLengthInformation => 0x02;
         public static int Name => 0x03;
         public static int Difficutly => OffsetDiff + 0x00;
-        public static int Gender => OffsetDiff + 0x02;
+        public static int Gender => OffsetDiff + 0x04;
 
         // Color Offsets
-        public static int HairColor => OffsetDiff + 0x0B;
+        public static int HairColor => OffsetDiff + 0x0D;
         public static int BodyColor => HairColor + 0x03;
         public static int EyeColor => BodyColor + 0x03;
         public static int ShirtColor => EyeColor + 0x03;
@@ -32,13 +32,13 @@ namespace TerrariaUSaveEditor.Helper
 
         // Equip Offsets
         /*
-         * Equip get saved right after Colors. 1 Accessory take 3 Bytes "ID ID ?PREFIX?"
+         * Equip get saved right after Colors. 1 Accessory take 3 Bytes "ID ID PREFIX"
          * Again 2 Bytes as "00 00" if the slot is empty. 
          * Based on this informations for accessory's, equipable items like armor should behave the same.
          * */
 
         // Inventory Offsets
-        public static int Inventory => OffsetDiff + 0x03D;
+        public static int Inventory => OffsetDiff + 0x53;
 
         public static int CalcOffsetDiffInventory(List<InventoryData> invData)
         {

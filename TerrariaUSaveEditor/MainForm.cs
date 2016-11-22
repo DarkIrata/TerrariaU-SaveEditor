@@ -20,6 +20,9 @@ namespace TerrariaUSaveEditor
         public MainForm()
         {
             this.InitializeComponent();
+
+            this.Text += $" v{Application.ProductVersion}";
+
             this.InitializeInventoryTab();
             this.Editor.ChangesSavedEvent += Editor_ChangesSavedEvent;
 
