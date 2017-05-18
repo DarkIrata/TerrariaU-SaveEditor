@@ -13,7 +13,7 @@ With the current state you can:
 Start the .exe and load your save.
 
 ## Usage
-1. Export using Saviine or Loaddine default savetype.
+1. Export using Saviine or Loadiine default savetype.
 2. Load.
 3. Change.
 4. Save.
